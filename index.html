@@ -9,7 +9,10 @@
 <body>
 <h2>Bus map</h2>
 <p>
-    <small>Usage example for WMS and SIRI VM application programming interfaces</small>
+    <small>Usage example for
+        <a href="https://www.turku.fi/turku-tieto/kartat-ja-paikkatieto/karttapalveluiden-rajapinnat">WMS</a>
+        and <a href="http://data.foli.fi">SIRI VM</a> application programming interfaces
+    </small>
 </p>
 <div id="mapid" style="width: 800px; height: 800px;"></div>
 <script>
@@ -18,7 +21,7 @@
     // Add background WMS map
     var wmsLayer = L.tileLayer.wms('https://opaskartta.turku.fi/TeklaOGCWeb/WMS.ashx', {
             layers: 'Opaskartta mv',
-            attribution: 'Data &copy; Turun kaupunki, ' +
+            attribution: 'Data &copy; City of Turku, ' +
             '<a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a>',
             opacity: 0.6
         }
