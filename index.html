@@ -67,16 +67,18 @@
 
             for (var bus_id in input['result']['vehicles']) {
                 bus = input['result']['vehicles'][bus_id]
-                var feature = {
-                    "type": "Feature",
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [bus['longitude'], bus['latitude']]
-                    }
-                };
-                feature.properties = bus;
-                feature.properties["id"] = bus_id;
-                fs.features.push(feature)
+                if ('longitude' in bus) {
+					var feature = {
+						"type": "Feature",
+						"geometry": {
+							"type": "Point",
+							"coordinates": [bus['longitude'], bus['latitude']]
+						}
+					};
+					feature.properties = bus;
+					feature.properties["id"] = bus_id;
+					fs.features.push(feature)
+                }
             }
             return fs;
         }
